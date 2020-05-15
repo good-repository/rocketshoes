@@ -1,30 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { formatPrice } from '../../util/format'
+import api from '../../services/api'
 
 import { ProductList } from './styles';
 import { MdAddShoppingCart } from 'react-icons/md';
 
-function Home() {
-  return (
-    <ProductList>
-      <li>
-        <img
-          src='https://static.netshoes.com.br/produtos/tenis-adidas-lite-racer-cln-masculino/12/COL-7070-012/COL-7070-012_zoom2.jpg?ts=1584624042&ims=326x'
-          alt='Tênis'
-        />
-        <strong>Tênis qualquer</strong>
-        <span>R$19,90</span>
+export default class Home extends Component {
+  state = {
+    products: []
+  }
 
-        <button>
-          <div>
-            <MdAddShoppingCart size={16} color='#FFF' />
-          </div>
+  async componentDidMount() {
+    const response = await api.get('products')
 
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
+    const data = response.data.map(product => ({
+      ...product, priceFormatted: formatPrice(product.price)
+    }))
 
-    </ProductList>
-  )
+    this.setState({ products: data })
+  }
+
+  render() {
+    const { products } = this.state
+    return (
+      <ProductList>
+        {products.map(product => (
+          <li key={product.id}>
+            <img
+              src={product.image}
+              alt={product.title}
+            />
+            <strong>{product.title}</strong>
+            <span>{product.priceFormatted}</span>
+
+            <button>
+              <div>
+                <MdAddShoppingCart size={16} color='#FFF' />
+              </div>
+
+              <span>ADICIONAR AO CARRINHO</span>
+            </button>
+          </li>
+        ))}
+      </ProductList >
+    )
+  }
 }
-
-export default Home;
