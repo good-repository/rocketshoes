@@ -26,7 +26,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [React](https://reactjs.org)
 - [Redux](https://redux.js.org/)
-- Diversas bibliotecas como Redux-Saga, Styled Components, React Icons, etc
+- [Redux-Saga](https://redux-saga.js.org/)
+- [React-toastify](https://fkhadra.github.io/react-toastify/)
+- [Styled Components](https://styled-components.com/)
+- Diversas bibliotecas como React Icons e etc
 
 ## 💻 Projeto
 
