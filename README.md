@@ -30,7 +30,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O projeto que visa simular o front-end de um e-commerce.
+O projeto visa simular o front-end de um e-commerce.
 
 ## 📚 Instruções
 
