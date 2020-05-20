@@ -5,8 +5,8 @@
 <br>
 
 <p align="center">
-  <img alt="Frontend" src="tela.png" width="50%">
-<img alt="Frontend" src="tela02.png" width="50%">
+  <img alt="Frontend" src="tela.png" width="100%">
+<img alt="Frontend" src="tela02.png" width="100%">
 </p>
 
 <h4 align="center">
